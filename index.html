@@ -1,100 +1,258 @@
 <!doctype html>
-  <html lang="fr">
+<html lang="fr">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <title>SGP - Accueil</title>
-    </head>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>SGP - Accueil</title>
+</head>
 
-    <body>
-      
-      </nav> 
-        <!-- TODO -->
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         
-          <a class="navbar-brand" href="#"> <img src="img/logo_sgp.png" width="110" height="70" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Collaborateurs <span class="sr-only">(current)</span></a>
-              </li>  
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Statistiques <span class="sr-only">(current)</span></a>
-              </li>  
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Activités <span class="sr-only">(current)</span></a>
-              </li>  
-            </ul>
+<body>
+  <!-- TODO -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <!-- Barre de navigation -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="#"> <img src="img/logo_sgp.png" width="110" height="70" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Collaborateurs <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Statistiques <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Activités <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+
+  </nav> <!-- Fin de la barre de navigation -->
+
+  <main>
+
+    <!-- Haut de la page avec les différents attributs de reherche de collaborateur -->
+    <div class="container">
+
+      <!--Ajout d'un collaborateur-->
+      <div class="row">
+        <div class="col-9"></div>
+        <div class="col" id="new_collab" name="new_collab">
+          <button type="button" class="btn btn-primary" style="font-size: small;"> Ajouter un nouveau
+            collaborateur</button>
+        </div>
+      </div>
+
+      <!--Titre de la page-->
+      <div class="row">
+        <div class="col" style="text-align: left;">
+          <h1>Les collaborateurs</h1>
+        </div>
+      </div>
+
+      <!--Barre de recherche d'un collaborateur-->
+      <div class="row">
+        <div class="col-5" name="rec_nom" id="rec_nom">Rechercher un nom ou un prénom qui commence par :</div>
+        <div class="col">
+          <input type="text" name="nom" id="nom">
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary" style="font-size: small;"> Rechercher</button>
+        </div>
+        <div class="col-3">
+          <input type="radio" id="box" name="collab_des">
+          <label style="font-size: small;">Voir les collaborateurs désactivés</label>
+        </div>
+      </div>
+
+      <!--Filtre du collaborateur par département-->
+      <div class="row">
+        <div class="col-5" style="text-align: right;">Filtrer par département :</div>
+        <div class="col-7">
+          <select id="département">
+            <option value="tous">Tous</option>
+            <option value="compta">Comptabilité</option>
+            <option value="rh">Ressources Humaines</option>
+            <option value="info">Informatique</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partie avec toutes les cartes de collaborateurs -->
+    <div class="container">
+
+      <!--Ligne-->
+      <div class="row">
+
+        <!--Carte-->
+        <div class="card" style="width: 22rem; margin: 10px; margin-top: 40px;">
+          <div class="card-body">
+            <h5 class="card-title">Zinedine Zidane</h5> <!-- nom prenom dans une case en haut -->
+            <div class="row">
+              <div class="col-4"> <img src="img/zidane.jpg" class="card-img-top" alt="zidane"></div>
+              <div class="col-8">
+                <p class="card-text" style="font-size: 9pt;">
+                  Fonction : Comptable<br>
+                  Département : Comptabilité<br>
+                  Email : z.zidane@sgp.fr<br>
+                  Téléphone : 0120304050
+                </p>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-8"></div>
+              <div class="col-4"><a href="#" class="btn btn-primary" style="font-size: small;">Editer</a></div>
+            </div>
           </div>
+        </div>
 
-        </nav> 
-
-        <main>
-          <div class="container">
-
+         <!--Carte-->
+         <div class="card" style="width: 22rem; margin: 10px; margin-top: 40px;">
+          <div class="card-body">
+            <h5 class="card-title">Antoine Griezmann</h5> <!-- nom prenom dans une case en haut -->
             <div class="row">
-              <div class="col-9"></div>
-              <div class="col" id="new_collab" name="new_collab">
-                <button type="submit" style="font-size: small;">Ajouter un nouveau collaborateur</button>
+              <div class="col-4"> <img src="img/antoine-griezmann.jpg" class="card-img-top" alt="grizou"></div>
+              <div class="col-8">
+                <p class="card-text" style="font-size: 9pt;">
+                  Fonction : Chargé de recrutement<br>
+                  Département : Ressources Humaines<br>
+                  Email : a.griezmann@sgp.fr<br>
+                  Téléphone : 0120304051
+                </p>
               </div>
             </div>
-
-            <div class="row">
-              <div class="col" style="text-align: left;">
-                <h1>Les collaborateurs</h1>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-5" name="rec_nom" id="rec_nom">Rechercher un nom ou un prénom qui commence par :</div>
-              <div class="col">
-                <input type="text" name="nom" id="nom">
-              </div>
-              <div class="col">
-                <button type="submit">Rechercher</button>
-              </div>
-              <div class="col-3">
-                <input type="radio" id="box" name="collab_des">
-                <label style="font-size: small;">Voir les collaborateurs désactivés</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-5" style="text-align: right;">Filtrer par département :</div>
-              <div class="col-7">
-                <select id="département">
-                  <option value="tous">Tous</option>
-                  <option value="compta">Comptabilité</option>
-                  <option value="rh">Ressources Humaines</option>
-                  <option value="info">Informatique</option>
-                </select>
-              </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-8"></div>
+              <div class="col-4"><a href="#" class="btn btn-primary" style="font-size: small;">Editer</a></div>
             </div>
           </div>
+        </div>
 
-        </main>
+         <!--Carte-->
+         <div class="card" style="width: 22rem; margin: 10px; margin-top: 40px;">
+          <div class="card-body">
+            <h5 class="card-title">Cristiano Ronaldo</h5> <!-- nom prenom dans une case en haut -->
+            <div class="row">
+              <div class="col-4"> <img src="img/cristiano-ronaldo.jpg" class="card-img-top" alt="cristiano"></div>
+              <div class="col-8">
+                <p class="card-text" style="font-size: 9pt;">
+                  Fonction : Développeur Java<br>
+                  Département : Informatique<br>
+                  Email : c.ronaldo@sgp.fr<br>
+                  Téléphone : 0120304054
+                </p>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-8"></div>
+              <div class="col-4"><a href="#" class="btn btn-primary" style="font-size: small;">Editer</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--Fin ligne-->
+
+      <!--Ligne-->
+      <div class="row">
+
+        <!--Carte-->
+        <div class="card" style="width: 22rem; margin: 10px; margin-top: 40px;">
+          <div class="card-body">
+            <h5 class="card-title">Kylian Mbappe</h5> <!-- nom prenom dans une case en haut -->
+            <div class="row">
+              <div class="col-4"> <img src="img/mbappe.jpg" class="card-img-top" alt="mbappe"></div>
+              <div class="col-8">
+                <p class="card-text" style="font-size: 9pt;">
+                  Fonction : Développeur JS<br>
+                  Département : Informatique<br>
+                  Email : k.mbappe@sgp.fr<br>
+                  Téléphone : 0120304053
+                </p>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-8"></div>
+              <div class="col-4"><a href="#" class="btn btn-primary" style="font-size: small;">Editer</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!--Carte-->
+        <div class="card" style="width: 22rem; margin: 10px; margin-top: 40px;">
+          <div class="card-body">
+            <h5 class="card-title">Olivier Giroud</h5> <!-- nom prenom dans une case en haut -->
+            <div class="row">
+              <div class="col-4"> <img src="img/giroud.jpg" class="card-img-top" alt="giroud"></div>
+              <div class="col-8">
+                <p class="card-text" style="font-size: 9pt;">
+                  Fonction : Responsable RH<br>
+                  Département : Ressources Humaines<br>
+                  Email : o.giroud@sgp.fr<br>
+                  Téléphone : 0120304055
+                </p>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-8"></div>
+              <div class="col-4"><a href="#" class="btn btn-primary" style="font-size: small;">Editer</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!--Carte-->
+        <div class="card" style="width: 22rem; margin: 10px; margin-top: 40px;">
+          <div class="card-body">
+            <h5 class="card-title">Michel Platini</h5> <!-- nom prenom dans une case en haut -->
+            <div class="row">
+              <div class="col-4"> <img src="img/platini.jpg" class="card-img-top" alt="platini"></div>
+              <div class="col-8">
+                <p class="card-text" style="font-size: 9pt;">
+                  Fonction : Développeur Senior Java<br>
+                  Département : Informatique<br>
+                  Email : m.platini@sgp.fr<br>
+                  Téléphone : 0120304056
+                </p>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-8"></div>
+              <div class="col-4"><a href="#" class="btn btn-primary" style="font-size: small;">Editer</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--Fin de la ligne-->
+
+    </div>
+    <!--Fin du conteneur des cartes de collaborateurs-->
+
+  </main>
 
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-
       J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-          crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-          crossorigin="anonymous"></script>
-    </body>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
 
-  </html>
+</html>
